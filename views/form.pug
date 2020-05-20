@@ -1,0 +1,12 @@
+extends header.pug
+block styles
+
+block content
+    form(action="/add-products" method="POST")
+        h1 Username
+        input(type="text" name="title")
+        br
+        br
+        input(type="file" name="image")
+        button(type="submit") Submit
+    include ./footer.pug
