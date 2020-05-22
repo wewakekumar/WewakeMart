@@ -3,30 +3,42 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title wewakemart
+        link(rel="icon",href="/images/slogo.jpg")
         link(rel="stylesheet" ,href="/css/header.css")
+        link(rel="stylesheet",href="/css/form.css")
         block styles
 
     body
         header
             nav
                 ul
-                    li
-                        a(href="/") 
-                            img(src="/images/slogo.jpg").logo
-                    li
-                        a(href="/add-products") Add Product
-                    li
-                        form(action="/" method="POST")
-                            input(type="text" placeholder="Username" name="username")
-                            input(type="password" placeholder="Password" name="password")
-                            button(type="Submit") Login
+                    .logoprod
+                        div
+                            li
+                                a(href="/") 
+                                    img(src="/images/slogo.jpg").logo
+                        div
+                            li
+                                a(href="/add-products") Add Product
+                    .loginsignup
+                        div
+                            li
+                                form(action="/" method="POST")
+                                    input(type="text" placeholder="Username" name="username")
+                                    input(type="password" placeholder="Password" name="password")
+                                    button(type="Submit") Login
+                        div.line
+                        .signup
+                            li
+                                a(href="/signup") 
+                                    button Signup
         .item-header
-            a(href="/groceries").active Groceries
-            a(href="/groceries") Medicines
-            a(href="/groceries") Vegetables
-            a(href="/groceries") Fruits
-            a(href="/groceries") Milk Products
+            a(href="/groceries",class=(bp==='groceries'?'active':'')) Groceries
+            a(href="/medicines",class=(bp==='medicines'?'active':'')) Medicines
+            a(href="/vegetables",class=(bp==='vegetables'?'active':'')) Vegetables
+            a(href="/fruits",class=(bp==='fruits'?'active':'')) Fruits
+            a(href="/milkproducts",class=(bp==='milkproducts'?'active':'')) Milk Products
         br
         .start
             block content

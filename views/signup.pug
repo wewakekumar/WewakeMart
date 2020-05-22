@@ -1,0 +1,19 @@
+extends header.pug
+block styles
+
+block content
+    .myform
+        form(action="/signup" method="post")
+            p Name
+            input(type="text" placeholder="Name" name="name")
+            p Email
+            input(type="email" placeholder="Email" name="email")
+            p Phone Number
+            input(type="number" placeholder="Mobile No." name="phone")
+            p Password
+            input(type="password" placeholder="Password" name="password")
+            p Confirm Password
+            input(type="password" placeholder="Confirm Password" name="confirmpassword")
+            br
+            button(type="submit") Signup
+    include ./footer.pug

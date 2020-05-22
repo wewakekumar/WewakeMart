@@ -3,13 +3,13 @@ block styles
     link(rel="stylesheet" href="/css/grid.css")
 block content
     .grid-container
-        include ./card.pug
-        include ./card.pug
-        include ./card.pug
-        include ./card.pug
-        include ./card.pug
-        include ./card.pug
-        include ./card.pug
-        include ./card.pug
+        each grocery in groceries
+            .card
+                img(src=grocery.imageURL)
+                p Price Rs. #{grocery.price}
+                .button-container
+                    a(href=`/products/`+id)
+                        button See Details
+                    button Add to cart
 
     include ../footer.pug

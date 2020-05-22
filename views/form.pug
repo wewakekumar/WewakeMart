@@ -2,11 +2,22 @@ extends header.pug
 block styles
 
 block content
-    form(action="/add-products" method="POST")
-        h1 Username
-        input(type="text" name="title")
-        br
-        br
-        input(type="file" name="image")
-        button(type="submit") Submit
-    include ./footer.pug
+   div.myform
+      form(action="/add-products" method="POST")
+         p Title
+         input(type="text" placeholder="Enter Title" name="title" autofocus)
+         p Price
+         input(type="text" placeholder="Enter Price" name="price")
+         p ImageUrl
+         input(type="text" placeholder="Enter ImageUrl" name="url")
+         p Category
+         select(name="category")
+            option(value="groceries") Groceries
+            option(value="medicines") Medicines
+            option(value="vegetables") Vegetables
+            option(value="fruits") Fruits
+            option(value="milkproducts") Milk Products
+         br
+         br
+         button(type="submit") Add Product
+   include ./footer.pug

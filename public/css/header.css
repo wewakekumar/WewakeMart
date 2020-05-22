@@ -2,6 +2,13 @@
 {
     box-sizing: border-box;
 }
+
+body
+{
+    padding:0px;
+    margin:0px;
+}
+
 header
 {
     background-color: #0dc5c1;
@@ -9,31 +16,23 @@ header
     position:fixed;
     top:0px;
 }
-ul
-{
-    display:flex;
-    margin:0px 5px;
-    justify-content: space-between;
-    list-style: none;
-    align-items: center;
-}
 
 input
 {
-    margin:5px 5px;
+    margin:0px 3px;
     height:28px;
 }
 .logo
 {
     height: 65px;
     width: 65px;
-    margin:5px 5px;
+    margin: 2px;
 }
 
 button
 {
     margin:5px 5px;
-    height:25px;
+    height:28px;
 }
 
 a
@@ -45,7 +44,7 @@ a
 {
     position: fixed;
     width:100%;
-    top:78px;
+    top:69px;
     display:flex;
     justify-content: space-between;
     border-bottom: 1px groove gray;
@@ -56,17 +55,7 @@ a
     color:black;
     padding: 10px;
 }
-@media only screen and (max-width: 400px) 
-{
-    input
-    {
-        width:100px;
-    }
-    a,p
-    {
-        font-size: 10px;
-    }
-}
+
 .start
 {
     margin-top: 100px;
@@ -75,4 +64,93 @@ a
 {
     background-color: rgba(7, 250, 238,0.2);
     border-bottom:4px solid rgb(95, 235, 235);
+}
+a:hover
+{
+    background-color: rgba(7, 250, 238,0.2);
+}
+
+ul
+{
+    display:flex;
+    margin:0px 5px;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    padding:0px;
+    margin-left: 0px;
+}
+
+.loginsignup
+{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    align-items: center;
+    margin:0px 1px;
+}
+.logoprod
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup
+{
+    margin-left: 10px;
+}
+
+.line
+{
+    border-left:1px solid white;
+    height:35px;
+    margin-left: 8px;
+}
+
+
+@media only screen and (max-width: 400px) 
+{
+    input
+    {
+        width:60px;
+        height:14px;
+        font-size:8px;
+        margin:0px 1px;
+    }
+    a,p
+    {
+        font-size: 8px;
+    }
+    button
+    {
+        font-size:8px;
+        height:18px;
+    }
+    .loginsignup button
+    {
+        height:14px;
+        font-size:8px;
+        margin:0px 1px;
+    }
+    .logo
+    {
+        height:47px;
+        width:47px;
+        margin:1px;
+    }
+    .item-header
+    {
+        top:48px;
+    }
+    .start
+    {
+    margin-top: 50px;
+    }
+    .line
+    {
+        border-left:1px solid white;
+        height:20px;
+        margin-left: 8px;
+    }
 }

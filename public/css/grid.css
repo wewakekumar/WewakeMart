@@ -3,10 +3,17 @@
     .grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto;
-        grid-gap: 20px;
-       
-        padding: 20px;
+        justify-content: space-between;
+        grid-gap: 30px; 
+        padding:10px;
       }
+}
+
+
+.card img
+{
+    height:200px;
+    width:100%;
 }
 
 .card
@@ -15,11 +22,7 @@
     flex-flow: column;
     justify-content: space-between;
 }
-.card img
-{
-    height:300px;
-    width:100%;
-}
+
 
 .button-container
 {
@@ -32,11 +35,15 @@
         display: grid;
         grid-template-columns: auto auto;
         grid-gap: 20px;
-        background-color: #2196F3;
         padding: 20px;
       }
-    .button-container button
+}
+
+@media only screen and (max-width: 400px) 
+{
+    .card img
     {
-    font-size:10px;
+        height:150px;
+        width:100%;
     }
 }
