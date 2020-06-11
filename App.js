@@ -1,14 +1,10 @@
 const express=require('express');
-
 const path=require('path');
-
+const session=require('express-session');
 const bodyParser=require('body-parser');
+const mysql=require('mysql2');
 
 const app=express();
-
-const sequelize=require('./Utils/Databases/database');
-const groceries=require('./Utils/Databases/grocery');
-const user=require('./Utils/Databases/user');
 
 const adminRoute=require('./routes/admin');
 const homeRoute=require('./routes/home');
@@ -18,6 +14,14 @@ const loginsignuproute=require('./routes/loginsignup');
 app.set('view engine','pug');
 app.set('views','views');
 
+
+const mysqlstore=require('express-mysql-session')(session);
+const sessionstore=new mysqlstore({ host:'localhost',
+user:'root',
+database:'wewakemart',
+password:'Fluse@wewake123'
+});
+app.use(session({key:'mykey',secret:'mysecret',resave:false,saveUninitialized:false,store:sessionstore}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'public')));
 
@@ -26,11 +30,11 @@ app.use(loginsignuproute);
 app.use(itemsRoute);
 app.use(homeRoute);
 
-app.use((res,req,next)=>
+app.use((req,res,next)=>
 {
     res.send('<h1>Page not found!!</h1>')
 })
 
-sequelize.sync().then(result=>{
-    app.listen(3000);
-}).catch(err=>{console.log(err)});
+
+app.listen(3000);
+

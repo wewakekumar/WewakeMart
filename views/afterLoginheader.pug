@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title wewakemart
+        link(rel="icon",href="/images/slogo.jpg")
+        link(rel="stylesheet" ,href="/css/header.css")
+        link(rel="stylesheet",href="/css/form.css")
+        block styles
+
+    body
+        header
+            nav
+                ul
+                    .logoprod
+                        div
+                            li
+                                a(href="/") 
+                                    img(src="/images/slogo.jpg").logo
+                        div
+                            li
+                                a(href="/add-products") My Profile
+                        div
+                            li
+                                a(href="/add-products") My Orders
+                        div
+                            li
+                                a(href="/add-products") Add to Cart
+                    img(src="/Images/cart.png")
+                    .logout
+                        li
+                            form(action="/logout" method="post")
+                                button(type="submit") Logout
+
+
+        .item-header
+            a(href="/groceries",class=(bp==='groceries'?'active':'')) Groceries
+            a(href="/medicines",class=(bp==='medicines'?'active':'')) Medicines
+            a(href="/vegetables",class=(bp==='vegetables'?'active':'')) Vegetables
+            a(href="/fruits",class=(bp==='fruits'?'active':'')) Fruits
+            a(href="/milkproducts",class=(bp==='milkproducts'?'active':'')) Milk Products
+        br
+        .start
+            block content

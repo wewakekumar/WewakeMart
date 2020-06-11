@@ -1,6 +1,8 @@
-extends header.pug
-block styles
+if(auth)
+    include ./afterLoginheader.pug
+else
+    include ./header.pug
 
-block content
-    h1 Hello Home!!!
-    include ./footer.pug
+h1 Hello Home!!!
+h2 #{text}
+include ./footer.pug

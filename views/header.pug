@@ -13,26 +13,47 @@ html(lang="en")
         header
             nav
                 ul
-                    .logoprod
+                    if(!auth)
+                        .logoprod
+                            div
+                                li
+                                    a(href="/") 
+                                        img(src="/images/slogo.jpg").logo
+                            div
+                                li
+                                    a(href="/add-products") Add Product
+                        .loginsignup
+                            div
+                                li
+                                    form(action="/login" method="post")
+                                        input(type="text" placeholder="Username" name="username")
+                                        input(type="password" placeholder="Password" name="password")
+                                        button(type="Submit") Login
+                            div.line
+                            .signup
+                                li
+                                    a(href="/signup") 
+                                        button Signup
+                    else
+                        .logoprod
                         div
                             li
                                 a(href="/") 
                                     img(src="/images/slogo.jpg").logo
                         div
                             li
-                                a(href="/add-products") Add Product
-                    .loginsignup
+                                a(href="/add-products") My Profile
                         div
                             li
-                                form(action="/" method="POST")
-                                    input(type="text" placeholder="Username" name="username")
-                                    input(type="password" placeholder="Password" name="password")
-                                    button(type="Submit") Login
-                        div.line
-                        .signup
+                                a(href="/add-products") My Orders
+                        div
                             li
-                                a(href="/signup") 
-                                    button Signup
+                                a(href="/add-products") Add to Cart
+                        img(src="/Images/cart.png")
+                        .logout
+                            li
+                                form(action="/logout" method="post")
+                                    button(type="submit") Logout
         .item-header
             a(href="/groceries",class=(bp==='groceries'?'active':'')) Groceries
             a(href="/medicines",class=(bp==='medicines'?'active':'')) Medicines
